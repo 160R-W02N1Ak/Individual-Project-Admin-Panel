@@ -1,18 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Administration panel</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./images/icons">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Administration Panel</title>
-</head>
-<body>
+    </head>
 
-</body>
-<script>
-</script>
+    <body>
+      <div class="layout">
+      <!-- Sidebar -->
+        <section class="menu">
+          <aside class="sidebar">
+            <div class="logo">
+              <h1>Just do it</h1>
+              <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+            </div>
+            <nav class="sidebar-nav">
+              <ul class="sidebar-links">
+                <li>
+                  <a href="#general"><img src="images/icons/general.svg" class="icon-general icon" alt="">General</a>
+                </li>
+                <li>
+                  <a href="#details"><img src="images/icons/details.svg" class="icon-details icon" alt="">Details</a>
+                </li>
+                <li>
+                  <a href="#links"><img src="images/icons/links.svg" class="icon-links icon" alt="">Links</a>
+                </li>
+                <li>
+                  <a href="#banners"><img src="images/icons/banners.svg" class="icon-banners icon" alt="">Banners</a>
+                </li>
+                <li>
+                  <a href="#personaldata"><img src="images/icons/personaldata.svg" class="icon-personaldata icon" alt="">Personal data</a>
+                </li>
+                <li>
+                  <a href="#payout"><img src="images/icons/payout.svg" class="icon-payout icon" alt="">Payout</a>
+                </li>
+                <li>
+                  <a href="#postback"><img src="images/icons/postback.svg" class="icon-postback icon" alt="">Postback</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="contact">
+              <div class="manager-title">
+                <h3>Your Manager</h3>
+              </div>
+              <div class="manager-profile">
+                <div class="manager-image">
+                  <img src="images/manager.jpg" alt="">
+                </div>
+                <a href="#" class="profile-name">Igor W.</a>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+    <!-- Topbar -->
+        <div class="top-bar">
+          <div class="top-bar-right">
+            <ul class="top-menu-links">
+              <li class="first-link">
+                <a href="#"><img src="images/icons/wallet.svg" class="icon-wallet icon-top" alt=""></a>
+                <div class="balance">$1,500.00</div>
+                <a href="#"><img src="images/icons/arrow-down.svg" class="icon-arrow-down icon-top" alt=""></a>
+              </li>
+              <li class="first-link">
+                <a href="#"><img src="images/icons/notification.svg" class="icon-notification icon-top" alt=""></a>
+              </li>
+              <li class="first-link">
+                <a href="#"><img src="images/icons/profile.svg" class="icon-profile icon-top" alt=""></a>
+                <div class="name-profile">Leonardo Dicaprio</div>
+              </li>
+              <li class="first-link">
+                <a href="#"><img src="images/icons/quit.svg" class="icon-quit" alt=""></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+    <!-- Dashboard -->
+        <div class="full-page">
+          <div class="container">
+            <div class="title">
+              <h3>General statistic</h3>
+            </div>
+            <div class="content">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="js/scripts.js"></script>
+    </body>
 </html>
