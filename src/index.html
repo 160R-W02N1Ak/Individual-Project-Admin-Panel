@@ -12,7 +12,7 @@
 
     <body>
       <!-- Modale -->
-      <div class="overlay" id="overlay">
+      <div class="overlay overlay-modal" id="overlay-modal">
         <div id="quit" class="modal">
           <div class="title-modal">
             <h5>Do you really want to Quit?</h5>
@@ -23,7 +23,46 @@
           </div>
         </div>
 
+        <div id="login" class="modal">
+          <div class="title login-title">
+            <h3>Login</h3>
+          </div>
+          <div class="login-wrapper">
+            <form action="" method="POST">
+              <input type="text" name="user-name" placeholder="login name">
+              <input type="text" name="password" placeholder="password">
+              <a href="#" class="btn js--close-modal">Enter</a>
+            </form>
+          </div>
+        </div>
+
+        <div id="chat" class="modal chat">
+          <div class="title chat-title">
+            <h3>Online chat with your personal manager</h3>
+            <a href="#" class="js--close-modal"><img src="vendor/icons/close.svg" class="icon-close icon" alt=""></a>
+          </div>
+          <div class="chat-person-wrapper">
+            <div class="manager-imagechat">
+              <img src="images/pexels-pixabay-220453.jpg" alt="">
+            </div>
+            <div class="chat-name">
+              <h4>Igor W.</h4>
+              <p class="btn btn-online">online</p>
+            </div>
+          </div>
+          <div id="chat-box" class="messages">
+            <div class="message answer">
+              Hello. Can I help you?
+            </div>
+          </div>
+          <div class="answer-box">
+            <input class="form-field chat-input" type="text" placeholder="Enter the message..">
+            <a href="#" class="btn btn-input">Send</a>
+          </div>
+        </div>
       </div>
+
+      <div id="overlay" class="overlay overlay-nav"></div>
 
       <div class="layout">
       <!-- Sidebar -->
@@ -73,22 +112,23 @@
                   <a href="#" class="nav-item nav-link"><img src="vendor/icons/notification.svg" class="icon-notification icon-top" alt="">Notifications</a>
                 </li>
                 <li class="top-link">
-                  <a href="#" class="nav-item nav-link"><img src="vendor/icons/profile.svg" class="icon-profile icon-top" alt="">Leonardo Dicaprio</a>
+                  <a href="#login" class="nav-item nav-link js--open-modal"><img src="vendor/icons/profile.svg" class="icon-profile icon-top" alt="">Leonardo Dicaprio</a>
                 </li>
                 <li class="top-link">
-                  <a href="#quit" class="nav-item nav-link"><img src="vendor/icons/quit.svg" class="icon-quit" alt="">Log out</a>
+                  <a href="#quit" class="nav-item nav-link js--open-modal"><img src="vendor/icons/quit.svg" class="icon-quit" alt="">Log out</a>
                 </li>
               </ul>
             </div>
             <div class="contact">
+              <div class="rwd-line"></div>
               <div class="manager-title">
                 <h3>Your Manager</h3>
               </div>
               <div class="manager-profile">
                 <div class="manager-image">
-                  <img src="images/pexels-pixabay-220453.jpg" alt="">
+                  <img src="images/manager.jpg" alt="">
                 </div>
-                <a href="#" class="profile-name">Mikhael E.</a>
+                <a href="#chat" class="profile-name js--open-modal">Igor W.</a>
               </div>
             </div>
           </aside>
@@ -107,11 +147,11 @@
                 <a href="#"><img src="vendor/icons/notification.svg" class="icon-notification icon-top" alt=""></a>
               </li>
               <li class="first-link">
-                <a href="#"><img src="vendor/icons/profile.svg" class="icon-profile icon-top" alt=""></a>
+                <a href="#login" class="js--open-modal"><img src="vendor/icons/profile.svg" class="icon-profile icon-top" alt=""></a>
                 <div class="name-profile">Leonardo Dicaprio</div>
               </li>
               <li class="first-link">
-                <a href="#"><img src="vendor/icons/quit.svg" class="icon-quit" alt=""></a>
+                <a href="#quit" class="js--open-modal"><img src="vendor/icons/quit.svg" class="icon-quit" alt=""></a>
               </li>
             </ul>
           </div>
@@ -154,11 +194,11 @@
                   </div>
                 </div>
               </div>
-              <div class="chart-wrapper row max-width">
+              <div class="chart-wrapper">
                 <div class="chart-title">
                   <h5>Earnings chart</h5>
                 </div>
-                <div class="chart" style="position: relative; max-width: 800px; max-height: 350px;">
+                <div class="chart" style="position: relative;">
                   <canvas id="myChart" width="800" height="350"></canvas>
                 </div>
               </div>
@@ -179,7 +219,7 @@
               </div>
               <div class="empty-line"></div>
               <div class="scroll-wrapper">
-                <table>
+                <table class="content-table">
                   <thead>
                     <tr>
                       <th scope="col">Tracker name</th>
@@ -210,8 +250,8 @@
                       <td>cpl(200)</td>
                     </tr>
                     <tr>
-                      <td>aff/sam_test</td>
-                      <td>17/04/05 (12:45)</td>
+                      <td>aff/leo_test</td>
+                      <td>15/08/02 (12:45)</td>
                       <td>235</td>
                       <td>448</td>
                       <td>84</td>
@@ -236,8 +276,60 @@
                       <td>cpl(200)</td>
                     </tr>
                     <tr>
+                      <td>aff/leo_test</td>
+                      <td>15/08/02 (12:45)</td>
+                      <td>235</td>
+                      <td>448</td>
+                      <td>84</td>
+                      <td>8</td>
+                      <td>3</td>
+                      <td>34,485.00</td>
+                      <td>485.00</td>
+                      <td>45.00</td>
+                      <td>cpl(200)</td>
+                    </tr>
+                    <tr>
                       <td>aff/sam_test</td>
                       <td>17/04/05 (12:45)</td>
+                      <td>235</td>
+                      <td>448</td>
+                      <td>84</td>
+                      <td>8</td>
+                      <td>3</td>
+                      <td>34,485.00</td>
+                      <td>485.00</td>
+                      <td>45.00</td>
+                      <td>cpl(200)</td>
+                    </tr>
+                    <tr>
+                      <td>aff/leo_test</td>
+                      <td>15/08/02 (12:45)</td>
+                      <td>235</td>
+                      <td>448</td>
+                      <td>84</td>
+                      <td>8</td>
+                      <td>3</td>
+                      <td>34,485.00</td>
+                      <td>485.00</td>
+                      <td>45.00</td>
+                      <td>cpl(200)</td>
+                    </tr>
+                    <tr>
+                      <td>aff/sam_test</td>
+                      <td>17/04/05 (12:45)</td>
+                      <td>235</td>
+                      <td>448</td>
+                      <td>84</td>
+                      <td>8</td>
+                      <td>3</td>
+                      <td>34,485.00</td>
+                      <td>485.00</td>
+                      <td>45.00</td>
+                      <td>cpl(200)</td>
+                    </tr>
+                    <tr>
+                      <td>aff/leo_test</td>
+                      <td>15/08/02 (12:45)</td>
                       <td>235</td>
                       <td>448</td>
                       <td>84</td>
@@ -410,10 +502,205 @@
             </div>
           </div>
 
-      </div>
+          <div id="personaldata" class="page">
+            <div class="container">
+              <div class="title">
+                <h3>Personal data</h3>
+              </div>
+              <div class="personal-wrapper">
+                <form class="personal-form">
+                  <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="user-name">
+                  </div>
+                  <div class="field">
+                    <label>Surname</label>
+                    <input type="text" name="user-surname">
+                  </div>
+                  <div class="field">
+                    <label>E-mail</label>
+                    <input type="email" name="user-email">
+                  </div>
+                  <div class="field">
+                    <label>Phone number</label>
+                    <input type="text" name="user-number">
+                  </div>
+                </form>
+              </div>
+              <div class="social-wrapper">
+                <form class="personal-form">
+                  <div class="field">
+                    <label>Skype</label>
+                    <input type="text" name="user-skype">
+                  </div>
+                  <div class="field">
+                    <label>ICQ</label>
+                    <input type="text" name="user-icq">
+                  </div>
+                  <div class="field">
+                    <label>Msn</label>
+                    <input type="text" name="user-msn">
+                  </div>
+                </form>
+              </div>
+              <div class="wallet-wrapper">
+                <form class="personal-form">
+                  <div class="field">
+                    <label>Wallet</label>
+                    <input type="text" name="user-wallet">
+                  </div>
+                </form>
+              </div>
+              <div class="password-wrapper">
+                <form class="personal-form">
+                  <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="user-password">
+                  </div>
+                  <div class="field">
+                    <label>Repeat</label>
+                    <input type="password" name="user-password">
+                  </div>
+                </form>
+              </div>
+              <div class="button-wrapper">
+                <a href="#" class="btn btn-save">Save</a>
+              </div>
+            </div>
+          </div>
+          
+
+          <div id="payout" class="page">
+            <div class="container">
+              <div class="title">
+                <h3>Payout</h3>
+              </div>
+              <div class="row dates">
+                <div class="calender">
+                  <input type="text" class="start-date" name="start-date" placeholder="16.05.2016">
+                  <input type="text" class="end-date" name="end-date" placeholder="16.05.2016">
+                </div>
+                <button type="submit" class="calender-refresh-button">
+                  <i class="icon icon-refresh"></i>
+                </button>
+              </div>
+              <div class="row detail-table">       
+                <table>      
+                  <thead>
+                    <tr>
+                      <th scope="col">Tracker name</th>
+                      <th scope="col">Initiated date</th>
+                      <th scope="col">Visits</th>
+                      <th scope="col">Unique</th>
+                      <th scope="col">Signups</th>
+                      <th scope="col">FTD</th>
+                      <th scope="col">Depositors</th>
+                      <th scope="col">Deposits ($)</th>
+                      <th scope="col">Payout ($) </th>
+                      <th scope="col">Turnover</th>
+                      <th scope="col">Deal</th>
+                    </tr>
+                  </thead>        
+                  <tbody>
+                    <tr class="link-table">
+                      <td>aff/sam_test</td>
+                      <td>17/08/02 (12:58)</td>
+                      <td>232</td>
+                      <td>114</td>
+                      <td>12</td>
+                      <td>6</td>
+                      <td>3</td>
+                      <td>34.425.00</td>
+                      <td>234.00</td>
+                      <td>421,342.00</td>
+                      <td>cpl (200)</td>
+                    </tr>        
+                    <tr class="link-table">
+                      <td>aff/sam_test</td>
+                      <td>17/08/02 (12:58)</td>
+                      <td>232</td>
+                      <td>114</td>
+                      <td>12</td>
+                      <td>6</td>
+                      <td>3</td>
+                      <td>34.425.00</td>
+                      <td>234.00</td>
+                      <td>421,342.00</td>
+                      <td>cpl (200)</td>
+                    </tr>
+                    <tr class="link-table">
+                      <td>aff/sam_test</td>
+                      <td>17/08/02 (12:58)</td>
+                      <td>232</td>
+                      <td>114</td>
+                      <td>12</td>
+                      <td>6</td>
+                      <td>3</td>
+                      <td>34.425.00</td>
+                      <td>234.00</td>
+                      <td>421,342.00</td>
+                      <td>cpl (200)</td>
+                    </tr>
+                    <tr class="link-table">
+                      <td>aff/sam_test</td>
+                      <td>17/08/02 (12:58)</td>
+                      <td>232</td>
+                      <td>114</td>
+                      <td>12</td>
+                      <td>6</td>
+                      <td>3</td>
+                      <td>34.425.00</td>
+                      <td>234.00</td>
+                      <td>421,342.00</td>
+                      <td>cpl (200)</td>
+                    </tr>
+                    <tr class="link-table">
+                      <td>aff/sam_test</td>
+                      <td>17/08/02 (12:58)</td>
+                      <td>232</td>
+                      <td>114</td>
+                      <td>12</td>
+                      <td>6</td>
+                      <td>3</td>
+                      <td>34.425.00</td>
+                      <td>234.00</td>
+                      <td>421,342.00</td>
+                      <td>cpl (200)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="row table-nav">
+                <i class="icon-arrow-left"></i>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">7</a>
+                <a href="#">8</a>
+                <a href="#">9</a>
+                <i class="icon-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+              
+
+          <div id="postback" class="page">
+            <div class="container">
+              <div class="title">
+                <h3>Postback</h3>
+              </div>
+            </div>
+          </div>
+
+          </div>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       <script src="./js/script.js"></script>
 
     </body>
 </html>
+
+

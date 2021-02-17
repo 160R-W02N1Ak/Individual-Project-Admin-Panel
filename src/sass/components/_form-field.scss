@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  
 
   .form-field {
     background-color: transparent;
@@ -43,6 +44,7 @@
     height: 140px;
     align-items: center;
     justify-content: center;
+    padding-left: 35px;
 
     .form-field{
       height: 30px;
@@ -50,6 +52,7 @@
       margin-left: 50px;
 
       &:first-of-type {
+        margin-bottom: 5px;
         border-right: 1.5px solid $background-color2;
       }
 

@@ -2,19 +2,19 @@
 /* eslint-disable no-unused-vars */
 
 {
-  /* Modals */
-  const closeModal = function(){
-    document.getElementById('overlay').classList.remove('show');
-  };
+
+
   /* Sidemenu */
   function toggleMenu() {
     const navButton = document.querySelector('.burger');
     const sidenav = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay-nav');
 
     navButton.addEventListener('click', function(e){
       e.preventDefault();
 
       sidenav.classList.toggle('nav-active');
+      overlay.classList.toggle('overlay-active');
     });
   }
 
@@ -87,10 +87,48 @@
       },
     });
   }
+  /* Modals */
+  const modalClose = document.querySelectorAll('.js--close-modal');
+  const overlaymodal = document.querySelector('#overlay-modal');
+  const modals = document.querySelectorAll('.modal');
+  const modalOpen = document.querySelectorAll('.js--open-modal');
+
+  const initModal = function(event){
+
+    for(const button of modalClose) {
+      button.addEventListener('click', closeBox);
+    }
+    overlaymodal.addEventListener('click', closeBox);
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key === 27) {
+        modalClose(event);
+      }
+    });
+
+    for(const button of modalOpen){
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const id = event.currentTarget.getAttribute('href').replace('#', '');
+        for(const modal of modals) {
+          modal.classList.toggle('active', modal.id === id);
+        }
+        overlaymodal.classList.toggle('show');
+      });
+    }
+  };
+  const closeBox = function(event) {
+    event.preventDefault();
+    for (const modal of modals) {
+      modal.classList.remove('active');
+    }
+    overlaymodal.classList.remove('show');
+  };
 
   const app = () => {
     toggleMenu();
     initChart();
+    initModal();
   };
 
   app();
